@@ -6,6 +6,9 @@ import { Login } from '../pages/Login'
 import axios from 'axios';
 import { CoinCard } from '../components/CoinCard'
 import { SignUp } from '../pages/SignUp'
+import { Coin } from '../components/Coin'
+import { Account } from '../pages/Account'
+import { AuthContextProvider } from '../services/AuthContext'
 
 export const AppRoutes = () => {
 
@@ -17,20 +20,24 @@ export const AppRoutes = () => {
     useEffect(() => {
         axios.get(url).then((response) => {
             setCoins(response.data)
-            // console.log(response.data)
+            console.log(response.data)
         })
     }, [url])
 
     return (
         <>
-            <NavBar />
-            <Routes>
-                <Route path='/*' element={<Home coins={coins} />}></Route>
-                <Route path='/login' element={<Login />}></Route>
-                <Route path='/signup' element={<SignUp />}></Route>
-                <Route path='signin'></Route>
-                <Route path='card' element={<CoinCard />}></Route>
-            </Routes >
+            <AuthContextProvider>
+                <NavBar />
+                <Routes>
+                    <Route path='/*' element={<Home coins={coins} />}></Route>
+                    <Route path='/login' element={<Login />}></Route>
+                    <Route path='/signup' element={<SignUp />}></Route>
+                    <Route path='/account' element={<Account />}></Route>
+                    <Route path='/card' element={<CoinCard />}></Route>
+                    <Route path='/coin' element={<Coin />}></Route>
+                </Routes >
+            </AuthContextProvider>
+
         </>
     )
 }

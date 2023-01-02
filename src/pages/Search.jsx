@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { AiOutlineStar } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 
 
@@ -26,6 +28,8 @@ export const Search = ({ coins }) => {
                     </form>
                 </div>
             </div>
+
+
 
 
             <div className='flex items-center text-center justify-around gap-4 p-2 w-auto md:w-[900px] h-auto border-collapse font-bold'   >
@@ -67,9 +71,10 @@ export const Search = ({ coins }) => {
                                 <AiOutlineStar className='w-8' />
                                 <p>{coin.market_cap_rank}</p>
                                 <img src={coin.image} alt={coin.name} className="w-6 md:w-8 mr-1 md:mr-2 rounded-full items-center text-center " />
-                                <button
+                                <Link to='/coin'><button
 
                                     className='bg-blue-600 text-white rounded-full p-1  w-12  text-center text-sm md:text-md '>{coin.symbol.toUpperCase()}</button>
+                                </Link>
                             </div>
                             {/* <div className='flex flex-row gap-4 md:gap-6 mr-0 md:mr-6 w-24 text-center'>
                                 </div> */}
@@ -81,7 +86,11 @@ export const Search = ({ coins }) => {
 
                             <p className='hidden md:flex text-center w-[150px]'>{coin.total_volume} US$</p>
                             <p className='hidden md:flex text-center w-[150px]'>{coin.market_cap} US$</p>
-                            <img src="https://www.coingecko.com/coins/325/sparkline" className='w-20 md:w-24 h-16 hidden md:flex' />
+                            <div className='w-24'>
+                                <Sparklines data={[16865.679924348886, 16862.520948313442, 16840.16651774838, 16836.402019038687, 16818.749629565693, 16841.011497434578, 16841.16468121544, 16823.19653988069]}>
+                                    <SparklinesLine color="blue" />
+                                </Sparklines>
+                            </div>
 
 
                         </div>

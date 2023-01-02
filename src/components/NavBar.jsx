@@ -7,7 +7,7 @@ export const NavBar = () => {
         //container
 
         <div className='flex  justify-between items-center mx-auto w-auto md:w-[950px] p-6 mb-4 mt-2 shadow-xl '>
-            <p className='font-bold text-2xl'>CryptoData.</p>
+            <Link to="/*"><p className='font-bold text-2xl'>CryptoData.</p></Link>
             <div className='hidden md:flex flex-row gap-1 items-center '>
                 <BsMoonFill className='text-[#00a8e8]' />
                 <p className='font-bold  '>Dark Mode</p>
