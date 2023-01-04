@@ -13,7 +13,7 @@ export const Search = ({ coins }) => {
 
 
     return (
-        <div className=' mx-auto w-auto md:w-[950px] p-4  shadow-xl bg-slate-200 rounded'>
+        <div className=' mx-auto w-auto md:w-[950px] p-4  shadow-xl bg-slate-300 rounded'>
             <div className='flex justify-between items-center '>
                 <h2 className='text-2xl hidden sm:flex font-semibold'>Search Coin</h2>
 
@@ -91,8 +91,8 @@ export const Search = ({ coins }) => {
                             </div>
 
 
-                            <p className='hidden md:flex text-center w-[150px]'>{coin.total_volume} US$</p>
-                            <p className='hidden md:flex text-center w-[150px]'>{coin.market_cap} US$</p>
+                            <p className='hidden md:flex text-center w-[150px]'>{coin.total_volume.toLocaleString()} US$</p>
+                            <p className='hidden md:flex text-center w-[150px]'>{coin.market_cap.toLocaleString()} US$</p>
                             <div className='w-24 hidden md:flex'>
                                 <Sparklines data={coin.sparkline_in_7d.price}>
                                     <SparklinesLine color="teal" />
