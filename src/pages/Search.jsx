@@ -14,7 +14,7 @@ export const Search = ({ coins }) => {
 
     return (
         <div className=' mx-auto w-auto md:w-[950px] p-4  shadow-xl bg-slate-300 rounded'>
-            <div className='flex justify-between items-center '>
+            <div className='flex justify-between items-center mb-2'>
                 <h2 className='text-2xl hidden sm:flex font-semibold'>Search Coin</h2>
 
                 <div className='flex flex-row items-center gap-2 text-slate-500'>
@@ -22,7 +22,7 @@ export const Search = ({ coins }) => {
                     <form >
                         <input
                             onChange={(e) => setSearch(e.target.value)}
-                            className='bg-slate-300 text-black rounded px-2 py-1'
+                            className='bg-white text-black rounded px-4 py-1'
                             type="text"
                             placeholder='Search a coin' />
                     </form>
